@@ -17,6 +17,7 @@ basic.showLeds(`
     . # . # .
     `)
 basic.showString("Hello!How are you?I'm good.  ")
+bluetooth.startButtonService()
 wuKong.setAllMotor(-26, -26)
 basic.forever(function () {
     sonor = sonarbit.sonarbit_distance(Distance_Unit.Distance_Unit_cm, DigitalPin.P1)
