@@ -1,15 +1,20 @@
 let sonor = 0
-basic.showIcon(IconNames.Sword)
-wuKong.setAllMotor(-80, -80)
+basic.showLeds(`
+    . # # . .
+    # # # . .
+    . # # # #
+    . # # # .
+    . . . . .
+    `)
+basic.showString("Hello!How are you?I'm good thanks bye! ")
+wuKong.setAllMotor(-50, -50)
 basic.forever(function () {
-    sonor = sonarbit.sonarbit_distance(Distance_Unit.Distance_Unit_mm, DigitalPin.P1)
-    if (sonor < 200 && sonor > 10) {
-        wuKong.setAllMotor(-50, 100)
-        basic.pause(randint(0, 10))
-    } else if (sonor < 10) {
-        wuKong.setAllMotor(10, 10)
-        basic.pause(randint(0, 10))
+    sonor = sonarbit.sonarbit_distance(Distance_Unit.Distance_Unit_cm, DigitalPin.P1)
+    if (sonor < 20 && sonor > 2) {
+        wuKong.stopAllMotor()
+        wuKong.setAllMotor(-25, 50)
+        basic.pause(randint(20, 50))
     } else {
-        wuKong.setAllMotor(-80, -80)
+        wuKong.setAllMotor(-50, -50)
     }
 })
