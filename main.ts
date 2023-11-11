@@ -1,9 +1,11 @@
 input.onButtonPressed(Button.A, function () {
     wuKong.setAllMotor(-100, -100)
+    basic.pause(2000)
 })
 input.onButtonPressed(Button.AB, function () {
     wuKong.stopMotor(wuKong.MotorList.M2)
     wuKong.stopMotor(wuKong.MotorList.M1)
+    basic.pause(2000)
 })
 input.onButtonPressed(Button.B, function () {
     wuKong.setLightMode(wuKong.LightMode.BREATH)
