@@ -1,6 +1,10 @@
 input.onButtonPressed(Button.A, function () {
     motor_running = 1
 })
+input.onSound(DetectedSound.Loud, function () {
+    wuKong.setLightMode(wuKong.LightMode.BREATH)
+    motor_running = 0
+})
 input.onButtonPressed(Button.AB, function () {
     wuKong.setLightMode(wuKong.LightMode.OFF)
 })
